@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+.permanent-marker {
+  font-family: "Permanent Marker", cursive;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+label:after {
+  content: "+";
+  position: absolute;
+  right: 1em;
+  color: #000;
+}
+
+input:checked + label:after {
+  content: "-";
+  line-height: 0.8em;
+}
+
+.accordion__content {
+  max-height: 0em;
+  transition: all 0.4s cubic-bezier(0.865, 0.14, 0.095, 0.87);
+}
+input[name="panel"]:checked ~ .accordion__content {
+  /* Get this as close to what height you expect */
+  max-height: 50em;
+}
